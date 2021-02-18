@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'zakop_app/style.css' %}">
+
+  	<title>Zakop</title>
+  </head>
+
+  <body>
+    <header class="header-top">
+      <nav class="flex-container">
+        <div class="flex-parent">
+          <a href="#" class="flex-child">Zakop</a>
+          <a href="#" class="flex-child">Hity</a>
+          <a href="#" class="flex-child">Mikroblog</a>
+          <a href="#" class="flex-child">Mój Zakop</a>
+          <a href="#" class="flex-child-hidden"></a>
+          <a href="#" class="flex-child">Zaloguj się</a>
+        </div>
+      </nav>
+    </header>
+
+    
+    <div class="main-content">
+      {% block content %}{% endblock content %}
+    </div>
+    
+
+
+    <footer class="footer-main">
+      <div class="footer-content-left">
+        <div>
+          <ul class="no-bullet">
+            <li><a href="#">Do góry</a></li>
+            <li><a href="#">O nas</a></li>
+            <li><a href="#">Kontakt</a></li>
+            <li><a href="#">Dla programistów</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-content-right">
+        <p>aasdas</p>
+        <p>lorem ipsum</p>
+      </div>
+    </footer>
+
+
+
+  </body>
+</html>
