@@ -15,12 +15,18 @@
     <header class="header-top">
       <nav class="flex-container">
         <div class="flex-parent">
-          <a href="#" class="flex-child">Zakop</a>
+          <a href="{% url 'zakop_app:index' %}" class="flex-child">Zakop</a>
           <a href="#" class="flex-child">Hity</a>
           <a href="#" class="flex-child">Mikroblog</a>
           <a href="#" class="flex-child">Mój Zakop</a>
           <a href="#" class="flex-child-hidden"></a>
-          <a href="#" class="flex-child">Zaloguj się</a>
+          {% if user.is_authenticated %}
+          <p class="flex-child-right">{{ user.username }} </p>
+          <a href="{% url 'users:logout' %}" class="flex-child-right">Wyloguj się </a>
+          {% else %}
+          <a href="{% url 'users:register' %}" class="flex-child-right">Stwórz konto</a>
+          <a href="{% url 'users:login' %}" class="flex-child-right">Zaloguj się</a>
+          {% endif %}
         </div>
       </nav>
     </header>
