@@ -9,8 +9,10 @@ https://docs.djangoproject.com/en/3.1/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.1/ref/settings/
 """
-
+import os
 from pathlib import Path
+from django.core.management.utils import get_random_secret_key
+from dotenv import load_dotenv
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -20,12 +22,22 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'fb!7p4i!74b4-ma05b2ptx498x&=vp2q@w8%s%c0ih%#z23d83'
+load_dotenv()
+
+# Generate key if .env file doesnt exist or open .env file otherwise
+if os.path.exists('key.env'):
+    SECRET_KEY = str(os.getenv('SECRET_KEY'))
+else:
+    with open('key.env', 'w') as f:
+        rand_key = get_random_secret_key()
+        f.write(f"SECRET_KEY = \'{rand_key}\'")
+    SECRET_KEY = str(os.getenv('SECRET_KEY'))
+
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
