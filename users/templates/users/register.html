@@ -1,0 +1,13 @@
+{% extends "zakop_app/base.html" %}
+
+{% block content %}
+  <form method='post' action="{% url 'users:register' %}">
+    <div class="main-content-center">
+      {% csrf_token %}
+      {{ form.as_p }}
+
+      <button name="submit">Zarejestruj się</button>
+      <input type="hidden" name="next" value="{% url 'zakop_app:index' %}" />
+    </div>
+  </form>
+{% endblock content %}  
