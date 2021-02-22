@@ -1,0 +1,17 @@
+{% extends "zakop_app/base.html" %}
+
+{% block content %}
+  <div class="main-content-left-form">
+    Dodaj znalezisko
+    <form action="{% url 'zakop_app:add_finding' %}" method="post">
+        {% csrf_token %}
+        {% for field in form %}
+        <p>{{ field.label_tag }} {{ field }}</p>
+        {% endfor %}
+        <input type="submit" values="Submit">
+    </form>
+  </div>
+  <div class="main-content-right">
+    Ostatnio dodane znaleziska
+  </div>
+{% endblock content %}  

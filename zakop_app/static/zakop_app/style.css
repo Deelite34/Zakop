@@ -61,7 +61,16 @@ body{
 	margin-left: 10%;
 	overflow:auto;
 	background-color:#e7f3f2;
+}
 
+.main-content-left-form{
+	float:left;
+	border:solid;
+	width:53%;
+	margin-left: 10%;
+	overflow:auto;
+	background-color:#e7f3f2;
+	height:300px;
 }
 
 .main-content-right{
