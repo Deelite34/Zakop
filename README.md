@@ -10,7 +10,7 @@ Install required modules(Other than Django and modules that come when project is
 
 # Goals
 ✅ Design and implement models of sqlite database  
-✅ Create skeleton of website, placebo buttons
+✅ Create skeleton of website, placebo buttons  
 ✅ Add colour scheme  
 ✅ Add basic account functionality, logging in and out, creating account  
 🟩 CURRENTLY WIP: Add findings feature  
