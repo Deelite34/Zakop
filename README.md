@@ -21,7 +21,7 @@ Install required modules
                   - OPTIONAL: Try to implement tags  
 
 🟩 Add mikroblog feature - blog where users can create posts, attach pictures to posts, respond to them, rate posts, tags  
-🟩 Research and decide on deplaying website for everyone to be able to see the end result easily  
+🟩 Research and decide on deploying website for everyone to be able to see the end result easily  
 🟩 Learn more about Django
                   
 
