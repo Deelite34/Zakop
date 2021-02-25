@@ -20,9 +20,10 @@
           <a href="#" class="flex-child">Mikroblog</a>
           <a href="#" class="flex-child">Mój Zakop</a>
           <a href="#" class="flex-child-hidden"></a>
+          <a href="{% url 'zakop_app:add_finding' %}" class="flex-child-right">Dodaj</a>
           {% if user.is_authenticated %}
           <p class="flex-child-right">{{ user.username }} </p>
-          <a href="{% url 'users:logout' %}" class="flex-child-right">Wyloguj się </a>
+          <a href="{% url 'users:logout' %}" class="flex-child-right">Wyloguj się</a>
           {% else %}
           <a href="{% url 'users:register' %}" class="flex-child-right">Stwórz konto</a>
           <a href="{% url 'users:login' %}" class="flex-child-right">Zaloguj się</a>
