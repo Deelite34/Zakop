@@ -5,8 +5,8 @@ Work in progress excercise Django website based off popular Polish social websit
 create virtual environment `python -m venv venv_zakop_app`  
 launch virtual environment `.\venv_zakop_app\scripts\activate` (powershell command)  
  
-Install required modules(Other than Django and modules that come when project is created)  
-`pip install python-dotenv`
+Install required modules
+`pip install -r requirements.txt`
 
 # Goals
 ✅ Design and implement models of sqlite database  
