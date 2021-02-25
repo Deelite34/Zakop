@@ -2,13 +2,13 @@ from django.contrib import admin
 
 # Register your models here.
 
-from zakop_app.models import findings_rating, tag
-from zakop_app.models import finding, comment
-from zakop_app.models import comments_rating, user
+from zakop_app.models import FindingRating, Tag
+from zakop_app.models import Finding, Comment
+from zakop_app.models import CommentsRating, ZakopUser
 
-admin.site.register(findings_rating)
-admin.site.register(finding)
-admin.site.register(comment)
-admin.site.register(tag)
-admin.site.register(comments_rating)
-admin.site.register(user)
+admin.site.register(FindingRating)
+admin.site.register(Finding)
+admin.site.register(Comment)
+admin.site.register(Tag)
+admin.site.register(CommentsRating)
+admin.site.register(ZakopUser)
