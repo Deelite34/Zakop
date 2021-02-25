@@ -1,8 +1,9 @@
 {% extends "zakop_app/base.html" %}
 
 {% block content %}
+<div class="main-content-form-wrapper">
   <div class="main-content-left-form">
-    Dodaj znalezisko
+    <p class="add-finding-header">Dodaj znalezisko</p>
     <form action="{% url 'zakop_app:add_finding' %}" method="post">
         {% csrf_token %}
         {% for field in form %}
@@ -11,7 +12,5 @@
         <input type="submit" values="Submit">
     </form>
   </div>
-  <div class="main-content-right">
-    Ostatnio dodane znaleziska
-  </div>
+</div>
 {% endblock content %}  

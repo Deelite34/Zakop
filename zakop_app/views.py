@@ -1,12 +1,16 @@
 from django.shortcuts import render
-
+from django.http import HttpResponseRedirect
 from .forms import AddFindingUrlForm
-from .models import user as user_model
+from .models import User, Finding
+from django.urls import reverse
 # Create your views here.
 
 
 def index(request):
-    return render(request, 'zakop_app/index.html')
+    limit = 10
+    findings = Finding.objects.order_by('finding_date')[:limit]
+    context = {'findings': findings}
+    return render(request, 'zakop_app/index.html', context)
 
 
 def add_finding(request):
@@ -16,11 +20,8 @@ def add_finding(request):
         form = AddFindingUrlForm(data=request.POST)
         if form.is_valid():
             new_finding = form.save(commit=False)
-            new_finding.user_id = request.user.id
-            # user_model.objects.raw(f"SELECT user_id FROM users WHERE name=\'{request.user.username}\';")
-            new_finding.title = request.title
-            new_finding.description = request.description
-            new_finding.permalink = request.permalink
+            user = User.objects.get(id=request.user.id)
+            new_finding.user_id = request.user
             new_finding.save()
             return HttpResponseRedirect(reverse('zakop_app:index'))
     current_user = request.user
