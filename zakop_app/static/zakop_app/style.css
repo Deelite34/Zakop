@@ -80,9 +80,20 @@ body{
 	background-color:#e7f3f2;
 	box-sizing: border-box;
 }
+.main-content-finding-big{
+	font-size:130%;
+}
+
+.main-content-finding-text{
+	height:30%;
+}
 
 .main-content-left img{
-	height:auto;
+	height:170px;
+}
+
+.main-content-finding-big img{
+	height:250px;
 }
 
 .main-content-form-wrapper{

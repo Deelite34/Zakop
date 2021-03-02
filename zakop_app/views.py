@@ -9,8 +9,14 @@ from django.urls import reverse
 def index(request):
     limit = 10
     findings = Finding.objects.order_by('finding_date')[:limit]
-    context = {'findings': findings}
+    context = {'findings': findings, 'finding': findings}
     return render(request, 'zakop_app/index.html', context)
+
+
+def finding(request, finding_id):
+    finding = Finding.objects.get(finding_id=finding_id)
+    context = {'finding': finding}
+    return render(request, 'zakop_app/finding.html', context)
 
 
 def add_finding(request):

@@ -10,14 +10,17 @@
       <div class="rating"></div>
       <img src="{% static 'zakop_app/no_image_available.png' %}" alt="No image available">
       <div class="main-content-left-text">
-        <a href="http://{{finding.permalink}}">{{ finding.title }}</a>
-        <p> {{ finding.description }}</p></div>
+        <a href="http://{{finding.permalink}}"><h3>{{ finding.title }}</h3></a>
+        <p class="main-content-finding-text"> {{ finding.description }}</p>
+        <a href="{% url 'zakop_app:finding' finding.finding_id %}">Komentarze</a>
+      </div>
     </div>
   {% empty %}
     <div class="main-content-left">
       <div class="rating"></div>
       <img src="{% static 'zakop_app/no_image_available.png' %}" alt="No image available">
-      <div class="main-content-left-text">{{ finding.title }} {{ finding.description }}</div>
+      <h2>{{ finding.title }}as</h2>
+      <div class="main-content-left-text">{{ finding.description }}</div>
       <p>Nie ma znalezisk do wyświetlenia. Czemu by nie dodać jedno?</p>
     </div>
   

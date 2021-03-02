@@ -1,0 +1,16 @@
+{% extends "zakop_app/base.html" %}
+
+{% block content %}
+{% load static %}
+
+<div class='main-content-findings'>
+  <div class="main-content-left main-content-finding-big">
+      <div class="rating"></div>
+      <img src="{% static 'zakop_app/no_image_available.png' %}" alt="No image available">
+      <div class="main-content-left-text">
+        <a href="http://{{finding.permalink}}"><h3>{{ finding.title }}</h3></a>
+        <p class="main-content-finding-text"> {{ finding.description }}</p>
+      </div>
+    </div>
+</div>
+{% endblock content %}
