@@ -69,10 +69,10 @@ body{
 }
 
 .main-content-left{
-	display:flex;
+	display: inline-block;
 	align-content: center;
 	border:solid;
-	width:auto;
+	width:50%;
 	margin-top:10px;
 	max-width:140vh;
 	margin-left: 22%;
@@ -83,13 +83,21 @@ body{
 .main-content-finding-big{
 	font-size:130%;
 }
-
+.main-content-finding-title{
+	margin-bottom:0px;
+}
 .main-content-finding-text{
 	height:30%;
+	margin-top:0px;
+	overflow:visible;
+}
+.main-content-finding-text-header{
+	margin:4px;
 }
 
 .main-content-left img{
 	height:170px;
+	float:left;
 }
 
 .main-content-finding-big img{
